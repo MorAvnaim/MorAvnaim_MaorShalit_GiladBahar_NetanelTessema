@@ -107,7 +107,7 @@
 <div class="card">
     <div class="badge">DevOps Final Project 2026</div>
 
-    <h1>HIT DevOps Project</h1>
+    <h1>HIT DevOps Final Pipeline</h1>
 
     <p>
         Simple JSP web application deployed with GitHub, Jenkins and Tomcat.
