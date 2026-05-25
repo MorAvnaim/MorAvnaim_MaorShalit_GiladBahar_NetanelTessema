@@ -113,13 +113,28 @@
         Simple JSP web application deployed with GitHub, Jenkins and Tomcat.
     </p>
 
-    <input id="nameInput" type="text" placeholder="Enter your name">
+    <input 
+        id="nameInput" 
+        type="text" 
+        placeholder="Enter your name"
+        oninput="trackAction('typing', this.value)"
+    >
 
-    <button id="submitBtn" onclick="showMessage()">Run Application</button>
+    <button 
+        id="submitBtn" 
+        onclick="showMessage(); trackAction('button_click', document.getElementById('nameInput').value)"
+    >
+        Run Application
+    </button>
 
     <p id="result"></p>
 
-    <a id="hitLink" href="https://www.hit.ac.il" target="_blank">
+    <a 
+        id="hitLink" 
+        href="https://www.hit.ac.il" 
+        target="_blank"
+        onclick="trackAction('link_click', 'HIT Website')"
+    >
         Visit HIT Website
     </a>
 
@@ -129,6 +144,13 @@
 </div>
 
 <script>
+    function trackAction(action, value) {
+        fetch("index.jsp?event=" + encodeURIComponent(action) +
+              "&value=" + encodeURIComponent(value) +
+              "&time=" + Date.now())
+            .catch(error => console.log("Tracking error:", error));
+    }
+
     function showMessage() {
         const name = document.getElementById("nameInput").value.trim();
         const result = document.getElementById("result");
