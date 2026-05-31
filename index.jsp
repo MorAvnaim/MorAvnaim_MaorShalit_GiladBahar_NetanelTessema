@@ -135,7 +135,7 @@
         target="_blank"
         onclick="trackAction('link_click', 'HIT Website')"
     >
-        Visit HIT Website
+        Visit HIT Website.
     </a>
 
     <div class="footer">
