@@ -14,7 +14,7 @@
             margin: 0;
             min-height: 100vh;
             font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #0f172a, #1e3a8a, #2563eb);
+            background: linear-gradient(135deg, #0f172a, #ca9e0f, #92c210);
             display: flex;
             justify-content: center;
             align-items: center;
